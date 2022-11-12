@@ -1,0 +1,8 @@
+if (Race > 2.5) then class: White (proba: 100.0%) | based on 7,552 samples
+
+if (Race <= 2.5) and (Race > 1.5) then class: Other Race (proba: 100.0%) | based on 3,047 samples
+
+if (Race <= 2.5) and (Race <= 1.5) and (Race <= 0.5) then class: Black/African American (proba: 100.0%) | based on 2,529 samples
+
+if (Race <= 2.5) and (Race <= 1.5) and (Race > 0.5) then class: Multi-racial (proba: 100.0%) | based on 137 samples
+

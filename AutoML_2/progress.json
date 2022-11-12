@@ -1,0 +1,222 @@
+{
+    "fit_level": "simple_algorithms",
+    "time_controller": {
+        "total_time_limit": 3600,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "ensemble"
+        ],
+        "algorithms": [
+            "Baseline",
+            "Decision Tree",
+            "Random Forest",
+            "Xgboost",
+            "Neural Network"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 1.0213088989257812
+            },
+            {
+                "model_name": "1_Baseline",
+                "model_type": "Baseline",
+                "fit_level": "simple_algorithms",
+                "train_time": 0.7838256359100342
+            },
+            {
+                "model_name": "2_DecisionTree",
+                "model_type": "Decision Tree",
+                "fit_level": "simple_algorithms",
+                "train_time": 12.634870052337646
+            }
+        ],
+        "is_hill_climbing": false,
+        "is_stacking": false
+    },
+    "all_params": {
+        "simple_algorithms": [
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Discharge Year": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "multiclass_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_2/X.data",
+                    "y_path": "AutoML_2/y.data",
+                    "results_path": "AutoML_2"
+                },
+                "learner": {
+                    "model_type": "Baseline",
+                    "ml_task": "multiclass_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "num_class": 4,
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "multiclass_classification",
+                "explain_level": 2,
+                "name": "1_Baseline",
+                "status": "trained",
+                "final_loss": 1.0212182063369408,
+                "train_time": 1.4525532722473145,
+                "data_type": "original",
+                "max_time_for_learner": 360.0
+            },
+            {
+                "additional": {
+                    "trees_in_step": 1,
+                    "train_cant_improve_limit": 0,
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Health Service Area": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Hospital County": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Operating Certificate Number": [
+                            "na_fill_median"
+                        ],
+                        "Facility Id": [
+                            "na_fill_median"
+                        ],
+                        "Facility Name": [
+                            "categorical_to_int"
+                        ],
+                        "Age Group": [
+                            "categorical_to_int"
+                        ],
+                        "Zip Code - 3 digits": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "Race": [
+                            "categorical_to_int"
+                        ],
+                        "Ethnicity": [
+                            "categorical_to_int"
+                        ],
+                        "Length of Stay": [
+                            "categorical_to_int"
+                        ],
+                        "Type of Admission": [
+                            "categorical_to_int"
+                        ],
+                        "Patient Disposition": [
+                            "categorical_to_int"
+                        ],
+                        "Discharge Year": [
+                            "remove_column"
+                        ],
+                        "CCS Diagnosis Description": [
+                            "categorical_to_int"
+                        ],
+                        "CCS Procedure Description": [
+                            "categorical_to_int"
+                        ],
+                        "APR DRG Description": [
+                            "categorical_to_int"
+                        ],
+                        "APR MDC Description": [
+                            "categorical_to_int"
+                        ],
+                        "APR Severity of Illness Description": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "APR Risk of Mortality": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "APR Medical Surgical Description": [
+                            "categorical_to_int"
+                        ],
+                        "Payment Typology 1": [
+                            "categorical_to_int"
+                        ],
+                        "Payment Typology 2": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Payment Typology 3": [
+                            "na_fill_median",
+                            "categorical_to_int"
+                        ],
+                        "Abortion Edit Indicator": [
+                            "categorical_to_int"
+                        ],
+                        "Emergency Department Indicator": [
+                            "categorical_to_int"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "multiclass_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.75,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_2/X.data",
+                    "y_path": "AutoML_2/y.data",
+                    "results_path": "AutoML_2"
+                },
+                "learner": {
+                    "model_type": "Decision Tree",
+                    "ml_task": "multiclass_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "criterion": "gini",
+                    "max_depth": 3,
+                    "num_class": 4,
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "multiclass_classification",
+                "explain_level": 2,
+                "name": "2_DecisionTree",
+                "status": "trained",
+                "final_loss": 2.999998500003369e-06,
+                "train_time": 13.773245811462402,
+                "data_type": "original",
+                "max_time_for_learner": 360.0
+            }
+        ]
+    },
+    "adjust_validation": false
+}
